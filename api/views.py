@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.response import  Response
 from rest_framework.decorators import api_view
 
-from .utils import createNote, getNoteDetail, getNotesList
+from .utils import createNote, deleteNote, getNoteDetail, getNotesList,updateNote
 
 
 
@@ -64,3 +64,7 @@ def getNotes(request):
 def getNote(request,pk):
     if request.method == "GET":
         return getNoteDetail(request,pk)
+    elif request.method == "PUT":
+        return updateNote(request,pk)
+    elif request.method == "DELETE":
+        return deleteNote(request,pk)

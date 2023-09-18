@@ -23,13 +23,18 @@ def createNote(request):
     serializer = NoteSerializer(note,many=False)
     return Response(serializer.data)
 
-def updateNode(request,pk):
+def updateNote(request,pk):
     data = request.data
     note = Note.objects.get(id=pk)
     serializer = NoteSerializer(instance=note,data=data)
 
+    # checking if serializer is valid like the form.is_valid in django forms
     if serializer.is_valid():
         serializer.save()
     
-    return serializer.data
+    return Response(serializer.data)
 
+def deleteNote(request,pk):
+    note = Note.objects.get(id=pk)
+    note.delete()
+    return Response("Note was deleted!")
