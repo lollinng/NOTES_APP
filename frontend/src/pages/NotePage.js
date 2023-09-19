@@ -4,7 +4,6 @@ import {ReactComponent as ArrowLeft} from '../assets/arrow-left.svg'
 
 const NotePage = () => {
 
-    // const { id } = useParams();
     const params = useParams();
     const navigate = useNavigate();
 
@@ -58,7 +57,9 @@ const NotePage = () => {
                 },
             }
         )
-        navigate(`/`);
+        setTimeout(()=> {
+            navigate(`/`);
+        }, 100);
     }
 
     let handleSubmit = ()=>{
@@ -71,13 +72,11 @@ const NotePage = () => {
             createNote()
         }
         // history.push('/')
-        navigate(`/`);
+        setTimeout(()=> {
+            navigate(`/`);
+           }, 100);
+        // navigate(`/`);
     }
-
-    // let handleChange = (value) => {
-    //     setNote(note => ({ ...note, 'body': value }))
-    //     console.log('Handle Change:', note)
-    // }
 
 
     return (
