@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="container dark">
         <div className="app">
-          <Header/>
+          {/* <Header/> */}
           <Routes>
             {/* exact command tells to render route if that path is exact true */}
             <Route path="/" exact element={<NotesListPage/>} />

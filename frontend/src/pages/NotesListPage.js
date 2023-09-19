@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ListItem from '../components/ListItem'
+import AddButton from '../components/AddButton'
 
 const NotesListPage = () => {
 
@@ -10,13 +11,14 @@ const NotesListPage = () => {
   // if no dependency useEffect run once
   useEffect(()=>{
     getNotes()
+    console.log('running')
     },[]
   )
 
   let getNotes = async () => {
     let response  = await fetch('/api/notes/')
     let data = await response.json()
-    // console.log('Data:',data)
+    console.log('Data:',data)
     // setting notes to the data
     setNotes(data)
   }
@@ -36,6 +38,7 @@ const NotesListPage = () => {
         ))}
 
       </div>
+      <AddButton />
     </div>
   )
 }

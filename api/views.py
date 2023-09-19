@@ -68,3 +68,4 @@ def getNote(request,pk):
         return updateNote(request,pk)
     elif request.method == "DELETE":
         return deleteNote(request,pk)
+    
