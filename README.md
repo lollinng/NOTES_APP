@@ -34,11 +34,11 @@ To explore and run this project locally, follow the steps below:
   python manage.py migrate
   ```
 4. RUN build in REACT
-   ```bash
-   cd frontend
-   npm run build
-   ```
-5. Run application
+  ```bash
+  cd frontend
+  npm run build
+  ```
+5. Run the application
   ```bash
   cd ..
   python manage.py runserver.
